@@ -6,7 +6,7 @@ user_location = "Memphis"
 
 p user_location
 
-gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_location}&key=AIzaSyAgRzRHJZf-uoevSnYDTf08or8QFS_fb3U"
+gmaps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{user_location}&key=GMAPS_KEY"
 
  gmaps_url
 
@@ -34,8 +34,12 @@ raw_data = URI.open(gmaps_url).read
  p latitude
  p longitude
 
- dark_sky_url = "https://api.darksky.net/forecast/26f63e92c5006b5c493906e7953da893/41.8887,-87.6355"
+ dark_sky_url = "https://api.darksky.net/forecast/DARK_SKY_KEY/41.8887,-87.6355"
 
  dark_sky_url
 
  require "open-uri"
+
+ gmaps_key = ENV.fetch("GMAPS_KEY")
+
+ dark_sky_key = ENV.fetch("DARK_SKY_KEY")
